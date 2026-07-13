@@ -10,12 +10,22 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    gap: 70px;
+    gap: 90px;
 }
 
 .personagem {
+    position: relative;
     height: 120px;
     width: 120px;
+    animation: personagem_balancar_mao 0.3s linear infinite;
+}
+
+.adversario_partida_iniciada {
+    animation: adversario_balancar_mao 0.3s linear infinite;
+}
+
+.jogador_partida_iniciada {
+    animation: jogador_balancar_mao 0.3s linear infinite;
 }
 
 #opcoes_jogadas {
@@ -32,6 +42,7 @@
     display: flex;
     justify-content: center;
     padding: 5px;
+    cursor: pointer;
 
     img {
         height: 80px;
@@ -39,11 +50,69 @@
 
     &:hover {
         background-color: #000;
-        cursor: pointer;
         transition: 0.3s;
     }
 }
 
+#btn_jogar {
+    font-size: 30px;
+    padding: 5px;
+    border: 3px solid #000;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    cursor: pointer;
+    font-weight: bold;
+
+    /*&:hover {
+        animation: zoom 1s linear infinite;
+    }*/
+}
+
 .jogada_selecionada {
     background-color: #000;
+}
+
+@keyframes zoom {
+    0% {
+        height: 50px;
+        font-size: 30px;
+    }
+
+    50% {
+        height: 55px;
+        font-size: 32px;
+    }
+
+    100% {
+        height: 50px;
+        font-size: 30px;
+    }
+}
+
+@keyframes adversario_balancar_mao {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: 50px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes jogador_balancar_mao {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 40px;
+    }
+
+    100% {
+        bottom: 0;
+    }
 }
